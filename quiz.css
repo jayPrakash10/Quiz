@@ -1,0 +1,31 @@
+#instr{
+    display:block;
+}
+#ques{
+    padding : 10px 20px;
+    background-color: #498af7;
+    display:none;
+}
+
+#opt{
+    padding-left: 30px;
+    margin: 20px 0px;
+    display:none;
+}
+
+button{
+    background-color: #00ff0e;
+    border: solid #00ff0e;
+    font-size:20px !important;
+    padding: 0px 20px;
+}
+
+button:hover{
+    background-color: #05e112;
+    border : solid #05e112;
+}
+
+header{
+    background-color: #206cf0;
+    height: 30px;
+}
