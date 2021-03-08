@@ -13,13 +13,13 @@
 <body>
     <main class="container">
       <header><div>display timer</div></header>
-      <div><h1 style="text-align:center;">Quiz</h1>
+      <div id='quiz'><h1 style="text-align:center;">Quiz</h1>
       <div id='instr'>
           <h1>Instruction</h1>
           <ul>
               <li>Quiz contains some question, each has 4 options</li>
               <li>Choose any one</li>
-              <li></li>
+              <li>You have timer to finish</li>
           </ul>
           <button style="margin-left: 46%;" onclick="start()">Start</button>
       </div>
@@ -34,10 +34,14 @@
       </form>
 
       <div id='nav' style="display:none;"><button id="prev" onclick="prevques()">Previous</button>
-          <button id="submit" style="float:right;">Submit</button>
-          <button id="next" style="float:right; margin-right:100px;" onclick="nextques()">Next</button> 
+          <button id="submit" style="float:right;" onclick="result()">Submit</button>
+          <button id="next" style="float:right;" onclick="nextques()">Next</button> 
       </div>
-  </div>
+      </div>
+      <div id='res'>
+        <h1 style="text-align:center;">Quiz Result</h1>
+        <div id='show'></div>
+      </div>
     </main>
   <script src="quiz.js"></script>
 

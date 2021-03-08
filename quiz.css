@@ -18,6 +18,7 @@ button{
     border: solid #00ff0e;
     font-size:20px !important;
     padding: 0px 20px;
+    border-radius: 5px;
 }
 
 button:hover{
@@ -28,4 +29,8 @@ button:hover{
 header{
     background-color: #206cf0;
     height: 30px;
+}
+
+#res{
+    display: none;
 }

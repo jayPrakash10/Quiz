@@ -1,7 +1,11 @@
-var quesobj = [{ 'ques':'What is HTML?','a':'HTML1','b':'HTML2','c':'HTML3','d':'HTML4'},
-               { 'ques':'What is XML?','a':'XML1','b':'XML2','c':'XML3','d':'XML4'}]
+var quesobj = [{ 'ques':'Full form HTML?',answer:{'a':'Hypertext Markup Language','b':'Hypertext Main Language','c':'Hightext Markup Language','d':'Hightext Main Language'}, correct : 'a'},
+               { 'ques':'Full form XML?',answer:{'a':'Encoding Markup Language','b':'Excessive Markup Language','c':'Extensible Markup Language','d':'Extensible Main Language'}, correct: 'c'},
+               { 'ques':'class in CSS is declared by',answer:{'a':'#className','b':'className','c':'class className','d':'.className'}, correct: 'd'},
+               { 'ques':'Invetor of Javascript',answer:{'a': 'Douglas Crockford','b': 'Sheryl Sandberg','c': 'Brendan Eich','d':'Mark Zuckerberg'}, correct: 'c'},
+               { 'ques':'Crome is ',answer:{'a':'Web site','b':'Application','c':'Tools','d':'Browser'}, correct: 'd'}]
 
 var counter=1;
+var checkanswer = [];
 
 document.getElementById('prev').style.visibility = "hidden";
 document.getElementById('submit').style.visibility = "hidden";
@@ -33,14 +37,17 @@ function showques(){
     }
     
     document.getElementById('ques').innerHTML=counter+". "+quesobj[counter-1].ques;
-    document.getElementById('opa').innerHTML=" "+quesobj[counter-1].a;
-    document.getElementById('opb').innerHTML=" "+quesobj[counter-1].b;
-    document.getElementById('opc').innerHTML=" "+quesobj[counter-1].c;
-    document.getElementById('opd').innerHTML=" "+quesobj[counter-1].d;
+    document.getElementById('opa').innerHTML=" "+quesobj[counter-1].answer.a;
+    document.getElementById('opb').innerHTML=" "+quesobj[counter-1].answer.b;
+    document.getElementById('opc').innerHTML=" "+quesobj[counter-1].answer.c;
+    document.getElementById('opd').innerHTML=" "+quesobj[counter-1].answer.d;
 }
 
 function nextques(){
-    //console.log(val);
+    let op=document.querySelector('#opt');
+    var val = 'input[name=answer]:checked';
+    const ans = quesobj[counter-1].answer;
+    checkanswer[counter-1]=(op.querySelector(val)||{}).value;
     counter++;
     showques();
 }
@@ -48,4 +55,23 @@ function nextques(){
 function prevques(){
     counter--;
     showques();
+}
+
+function result(){
+    let op=document.querySelector('#opt');
+    var val = 'input[name=answer]:checked';
+    const ans = quesobj[counter-1].answer;
+    checkanswer[counter-1]=(op.querySelector(val)||{}).value;
+    var i=0, count=0;
+    
+    quesobj.forEach((item)=>{
+        if(checkanswer[i]===item.correct)
+        {
+            count++;
+        }
+        i++;
+    });
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById("res").style.display = 'block';
+    document.getElementById("show").innerHTML="Correct answer : "+count;
 }
