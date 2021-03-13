@@ -1,0 +1,44 @@
+<!Doctype=html>
+<html>
+<head>
+	<title>Quiz Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link href="quiz.css" rel="stylesheet">
+</head>
+	<body>
+	<main class="container" style="font-family: cursive;">
+		<header><div><span id="timer"></span></div></header>
+		<h1 style="text-align:center; font-weight: bold;">Quiz</h1>
+		<div id='instruction'>
+			<h1>Instruction</h1>
+			<ul>
+				<li>Quiz contains 10 questions, each has 4 options</li>
+				<li>Choose correct option</li>
+				<li>You have 5 min to complete the quiz</li>
+				<li>Once the timer reaches 0, quiz will be over</li>
+				<li>Result will be shown when the quiz is over</li>
+			</ul>
+			<button style="margin-left: 46%;" onclick="start()">Start</button>
+		</div>
+		<div id="showquiz">
+			<div class="quiz-container">
+				<div id="quiz"></div>
+			</div>
+			<div>
+				<button id="previous" onclick="previousSlide()">Previous</button>
+				<button id="next" style="float:right;" onclick="nextSlide()">Next</button>
+				<button id="submit" style="float:right;" onclick="showResults()">Submit Quiz</button>
+			</div>
+		</div>
+		<div id='result'>
+        	<h1>Quiz Result</h1>
+			<h4>Test Completed</h4>
+			<div>Thank you for participating</div>
+        	<div id='res' style="background-color: #0f0;"><span>Your Score : </span><span id='show'></span></div>
+		</div>	
+	</main>
+	</body>
+
+	<script src="quiz.js"></script>
+</html>
